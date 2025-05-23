@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    environment{
-        DIRECTORY_PATH = "/Github_team_project/Deakin-Unit-Page"
-        TESTING_ENVIRONMENT = "Development enviroment"
-        PRODUCTION_ENVIRONMENT = "Deployment enviroment"
-    }
     stages {
         stage("Build"){
             steps{
