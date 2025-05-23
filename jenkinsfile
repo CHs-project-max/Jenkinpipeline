@@ -39,6 +39,7 @@ pipeline {
         {
             steps{
                 echo "release the applications to Micron21 server..."
+                echo "completed"
             }
         }
     }
