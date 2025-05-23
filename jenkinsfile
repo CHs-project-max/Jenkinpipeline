@@ -37,10 +37,10 @@ pipeline {
                 echo "Approved"
             }
         }
-        stage("Deploy to Production")
+        stage("Complete")
         {
             steps{
-                echo "Deploying into $PRODUCTION_ENVIRONMENT"
+                echo "Deploying into $PRODUCTION_ENVIRONMENT is complete"
             }
         }
     }
