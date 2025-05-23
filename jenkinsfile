@@ -1,5 +1,47 @@
-pipeline{
-    agen{
-        
+pipeline {
+    agent any
+    environment{
+        DIRECTORY_PATH = "/Github_team_project/Deakin-Unit-Page"
+        TESTING_ENVIRONMENT = "Development enviroment"
+        PRODUCTION_ENVIRONMENT = "Deployment enviroment"
+    }
+    stages {
+        stage("Build"){
+            steps{
+                echo "Building...."
+                echo "Fetching code from $DIRECTORY_PATH"
+                echo "Complie the code an generate any necessary artefects"
+            }
+        }
+        stage("Test"){
+            steps{
+                echo '"Unit tests" and "intergration tests"'
+            }
+        }
+        stage("Code Quality Check")
+        {
+            steps{
+                echo "Chect the quality of the code"
+            }
+        }
+        stage("Deploy")
+        {
+            steps{
+                echo "Deploy the application to $TESTING_ENVIRONMENT"
+            }
+        }
+        stage("Approval")
+        { 
+            steps{
+                sleep 10
+                echo "Approved"
+            }
+        }
+        stage("Deploy to Production")
+        {
+            steps{
+                echo "Deploying into $PRODUCTION_ENVIRONMENT"
+            }
+        }
     }
 }
